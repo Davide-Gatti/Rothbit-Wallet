@@ -1,7 +1,0 @@
-{
-  "backend/ethereumProxy.mjs": "45fd6894af6c805fbda9c41ca4e48bdfcacbc65af40671ae0877b11bc6aa0592",
-  "backend/startEthereumProxy.mjs": "d2a35ff7eb2a1adc65cc44e0cab85900bf40aa9910ab63b240aade7747f5585e",
-  "modules/rothbit-wdk-moonpay/policy.cjs": "84f54b89b0b5b402e97bf62da2b0e63c14647c6d4dd3f2f238546edbfe44db54",
-  "tests/ethereum-proxy.test.mjs": "52c25534d46c9392d399db42312f1d5a820d589dc13f55abb44923e205c6910d",
-  "render.yaml": "050b9104abe5124a34e55516cfcd34962fe8c0cf56231292be5a8e5c28880088"
-}

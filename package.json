@@ -1,5 +1,5 @@
 {
-  "name": "rothbit-ethereum-private-test",
+  "name": "rothbit-moonpay-private-test",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -7,7 +7,13 @@
     "node": ">=22"
   },
   "scripts": {
-    "start": "node backend/startEthereumProxy.mjs",
-    "test": "node --test tests/ethereum-proxy.test.mjs"
+    "start": "node backend/startMoonpayServer.mjs",
+    "test": "node --test tests/moonpay-hosting.test.mjs"
+  },
+  "dependencies": {
+    "@tetherto/wdk-protocol-fiat-moonpay": "1.0.0-beta.3"
+  },
+  "overrides": {
+    "@tetherto/wdk-wallet": "1.0.0-beta.17"
   }
 }
