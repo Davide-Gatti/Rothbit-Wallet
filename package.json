@@ -1,63 +1,13 @@
 {
-  "name": "rothbit-wallet",
+  "name": "rothbit-ethereum-private-test",
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "main": "index.js",
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
-    "start": "expo start --dev-client",
-    "android:prepare": "node scripts/install-bare-android.mjs && npm run bundle:wdk && npm run link:bare:android",
-    "android": "npm run android:prepare && expo run:android --device",
-    "android:generate": "expo prebuild --clean --platform android",
-    "setup:bare:android": "npm run android:prepare",
-    "link:bare:android": "node node_modules/react-native-bare-kit/android/link.mjs",
-    "bundle:wdk": "node scripts/build-wdk-bundle.mjs",
-    "bundle:wdk:source": "wdk-worklet-bundler generate --source-only",
-    "typecheck": "tsc --noEmit",
-    "test": "node --test tests/*.test.mjs",
-    "check": "npm run typecheck && npm test",
-    "check:bare": "node --test tests/bare-runtime.test.mjs",
-    "doctor": "npx expo-doctor && npx expo-modules-autolinking verify --verbose"
-  },
-  "dependencies": {
-    "@tetherto/wdk": "1.0.0-beta.14",
-    "@tetherto/wdk-react-native-core": "1.0.0-beta.14",
-    "@utexo/rgb-lightning-node-bare": "0.1.0-beta.14",
-    "@utexo/wdk-rgb-lightning": "0.1.0-beta.14",
-    "babel-preset-expo": "~57.0.0",
-    "expo": "~57.0.7",
-    "expo-build-properties": "~57.0.6",
-    "expo-crypto": "~57.0.0",
-    "expo-dev-client": "~57.0.5",
-    "expo-local-authentication": "~57.0.0",
-    "react": "19.2.3",
-    "react-native": "0.86.0",
-    "react-native-bare-kit": "0.15.0",
-    "react-native-fs": "^2.20.0"
-  },
-  "devDependencies": {
-    "@tetherto/wdk-worklet-bundler": "1.0.0-beta.6",
-    "@types/node": "^24.0.0",
-    "@types/react": "^19.2.0",
-    "@types/react-native-fs": "^2.8.3",
-    "typescript": "~6.0.3"
-  },
-  "expo": {
-    "doctor": {
-      "reactNativeDirectoryCheck": {
-        "exclude": [
-          "react-native-fs"
-        ]
-      }
-    }
-  },
-  "overrides": {
-    "@tetherto/wdk-react-native-core": {
-      "expo-crypto": "$expo-crypto",
-      "@tetherto/wdk-react-native-secure-storage": {
-        "expo-crypto": "$expo-crypto",
-        "expo-local-authentication": "$expo-local-authentication"
-      }
-    }
+    "start": "node backend/startEthereumProxy.mjs",
+    "test": "node --test tests/ethereum-proxy.test.mjs"
   }
 }

@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: rothbit-ethereum-sepolia
+    runtime: node
+    plan: free
+    region: frankfurt
+    buildCommand: node --test tests/ethereum-proxy.test.mjs
+    startCommand: node backend/startEthereumProxy.mjs
+    healthCheckPath: /ready
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: ETHEREUM_DEPLOYMENT_MODE
+        value: private-test
+      - key: ETHEREUM_CHAIN_ID
+        value: "11155111"
+      - key: ETHEREUM_RPC_URL
+        sync: false
+      - key: PIMLICO_API_KEY
+        sync: false
+      - key: ETHEREUM_PAYMASTER_ADDRESS
+        sync: false
+      - key: ETHEREUM_TEST_USDT_ADDRESS
+        sync: false
+      - key: ETHEREUM_PROXY_TOKEN
+        sync: false

@@ -1,8 +1,3 @@
+.env*
+!.env.example
 node_modules/
-node_modules.partial-bare-install/
-.expo/
-android/
-.wdk/
-.wdk-bundle/
-*.tsbuildinfo
-npm-debug.log*
